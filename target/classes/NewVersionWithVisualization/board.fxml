@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="CENTER" prefHeight="500" prefWidth="500" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NewVersionWithVisualization.BoardController">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+    <children>
+        <Button fx:id="ul" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="0" GridPane.rowIndex="0">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font></Button>
+
+        <Button fx:id="uc" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="1" GridPane.rowIndex="0">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font></Button>
+
+        <Button fx:id="ur" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="2" GridPane.rowIndex="0">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font></Button>
+
+        <Button fx:id="cl" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="0" GridPane.rowIndex="1">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font></Button>
+
+        <Button fx:id="cc" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+             <Font name="System Bold" size="48.0" />
+         </font></Button>
+
+        <Button fx:id="cr" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <font>
+             <Font name="System Bold" size="48.0" />
+         </font></Button>
+
+        <Button fx:id="bl" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="0" GridPane.rowIndex="2">
+         <font>
+             <Font name="System Bold" size="48.0" />
+         </font></Button>
+
+        <Button fx:id="bc" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+             <Font name="System Bold" size="48.0" />
+         </font></Button>
+
+        <Button fx:id="br" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <font>
+             <Font name="System Bold" size="48.0" />
+         </font></Button>
+    </children>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>

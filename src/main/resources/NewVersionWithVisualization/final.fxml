@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<GridPane vgap="15" hgap="15" alignment="CENTER" prefHeight="500" prefWidth="500" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NewVersionWithVisualization.FinalLog">
+   <children>
+      <Label text="GAME OVER"
+      GridPane.columnIndex="0"
+      GridPane.rowIndex="0"
+      GridPane.columnSpan="4"
+      GridPane.halignment="CENTER">
+      <font>
+          <Font name="System Bold" size="48.0" />
+      </font>
+      </Label>
+      <Label fx:id="typeOfFinal"
+             GridPane.rowIndex="5"
+             GridPane.columnIndex="0"
+             GridPane.columnSpan="4"
+          GridPane.halignment="CENTER">
+          <font>
+              <Font name="System Bold" size="18.0" />
+          </font>
+      </Label>
+      <Label fx:id="winnerLabel"
+              GridPane.rowIndex="7"
+             GridPane.columnIndex="0"
+             GridPane.columnSpan="4"
+             GridPane.halignment="CENTER">
+          <font>
+              <Font name="System Bold" size="20.0" />
+          </font>
+      </Label>
+      <Label text="Made by Daniil Sidorchuk"
+             GridPane.columnIndex="0"
+             GridPane.rowIndex="20"
+             GridPane.columnSpan="4"
+             GridPane.halignment="CENTER">
+          <font>
+              <Font size="8.0" />
+          </font>
+
+      </Label>
+
+   </children>
+</GridPane>
