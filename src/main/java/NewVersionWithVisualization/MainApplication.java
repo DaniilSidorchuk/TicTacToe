@@ -51,12 +51,23 @@ public class MainApplication extends Application {
     }
 
 
-    public void goToFinalLog(Player winner) throws IOException {
+    public void goToFinalLog(Player winner, Player playerFirst, Player playerSecond) throws IOException {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("final.fxml"));
         Parent root = loader.load();
 
         FinalLog log = loader.getController();
-        log.setApplication(this, winner);
+        log.setApplication(this, winner, playerFirst, playerSecond);
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Tic Tac Toe");
+        primaryStage.show();
+    }
+
+    public void goToStatisticTable() throws IOException {
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("statistic.fxml"));
+        Parent root = loader.load();
+        StatisticController statisticController = loader.getController();
+        statisticController.setApplication(this);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Tic Tac Toe");

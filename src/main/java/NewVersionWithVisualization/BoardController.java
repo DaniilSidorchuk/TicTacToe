@@ -58,7 +58,7 @@ public class BoardController {
     }
     findWinner();
     if (gameFinished()){
-        mainApplication.goToFinalLog(winner);
+        mainApplication.goToFinalLog(winner, playerFirst, playerSecond);
         }
     if (currentPlayer == playerFirst){
         currentPlayer = playerSecond;
