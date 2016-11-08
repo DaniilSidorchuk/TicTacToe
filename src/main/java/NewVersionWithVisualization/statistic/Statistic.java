@@ -41,7 +41,7 @@ public class Statistic {
     }
 
     private Properties loadProperties() throws IOException {
-        InputStream stream = this.getClass().getResourceAsStream("db.properties");
+        InputStream stream = this.getClass().getClassLoader().getResourceAsStream("db.properties");
 
         Properties properties = new Properties();
         properties.load(stream);
@@ -83,15 +83,18 @@ public class Statistic {
             preparedStatement1.setInt(1,players.size()+1);
             preparedStatement1.setString(2, player.getName());
             preparedStatement1.setInt(3, player.getAge());
+            preparedStatement1.execute();
             String sql2 = "insert into result(player_id, wins, losses) values(?, ?, ?)";
             PreparedStatement preparedStatement2 = connection.prepareStatement(sql2);
             preparedStatement2.setInt(1,players.size()+1);
             if (result.equals("win")){
                 preparedStatement2.setInt(2, 1);
                 preparedStatement2.setInt(3, 0);
+                preparedStatement2.execute();
             }else {
                 preparedStatement2.setInt(2, 0);
                 preparedStatement2.setInt(3, 1);
+                preparedStatement2.execute();
             }
         } else samePlayerInDataBase(connection);
 
@@ -102,7 +105,7 @@ public class Statistic {
          int wins = 0;
          int losses = 0;
          index++;
-         int id;
+         int id=0;
          String sql = "select * from result";
 
          Statement statement = connection.createStatement();
@@ -110,23 +113,26 @@ public class Statistic {
 
          ResultSet resultSet = statement.getResultSet();
          while (resultSet.next()){
-         id = resultSet.getInt("id");
+         id = resultSet.getInt("player_id");
          wins = resultSet.getInt("wins");
          losses = resultSet.getInt("losses");
          if (id == index) break;
          }
-
+        wins++;
+        losses++;
          if (result.equals("win")){
-         sql = "UPDATE result SET wins = REPLACE( wins, ?, ?);";
-         }else sql = "UPDATE result SET losses = REPLACE( losses, ?, ?);" ;
+         sql = "UPDATE result SET wins = ? where player_id = ?";
+         }else sql = "UPDATE result SET losses = ? where player_id = ?" ;
 
          PreparedStatement preparedStatement1 = connection.prepareStatement(sql);
          if (result.equals("win")){
              preparedStatement1.setInt(1, wins);
-             preparedStatement1.setInt(2, wins++);
+             preparedStatement1.setInt(2, id);
+             preparedStatement1.execute();
          }else {
              preparedStatement1.setInt(1, losses);
-             preparedStatement1.setInt(2, losses++);
+             preparedStatement1.setInt(2, id);
+             preparedStatement1.execute();
          }
 
 

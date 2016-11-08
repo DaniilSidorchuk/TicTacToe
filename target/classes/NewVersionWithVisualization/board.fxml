@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -12,47 +13,54 @@
         <Insets bottom="10" left="10" right="10" top="10" />
     </padding>
     <children>
-        <Button fx:id="ul" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <Label alignment="CENTER_RIGHT" text="Turn of player:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="1">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+        <Label fx:id="l1" textFill="#f80505" GridPane.columnIndex="1" GridPane.rowIndex="1">
+
+        </Label>
+        <Button fx:id="ul" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="0" GridPane.rowIndex="3">
          <font>
             <Font name="System Bold" size="48.0" />
          </font></Button>
 
-        <Button fx:id="uc" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="1" GridPane.rowIndex="0">
+        <Button fx:id="uc" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <font>
             <Font name="System Bold" size="48.0" />
          </font></Button>
 
-        <Button fx:id="ur" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="2" GridPane.rowIndex="0">
+        <Button fx:id="ur" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="2" GridPane.rowIndex="3">
          <font>
             <Font name="System Bold" size="48.0" />
          </font></Button>
 
-        <Button fx:id="cl" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <Button fx:id="cl" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="0" GridPane.rowIndex="4">
          <font>
             <Font name="System Bold" size="48.0" />
          </font></Button>
 
-        <Button fx:id="cc" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <Button fx:id="cc" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="1" GridPane.rowIndex="4">
          <font>
              <Font name="System Bold" size="48.0" />
          </font></Button>
 
-        <Button fx:id="cr" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="2" GridPane.rowIndex="1">
+        <Button fx:id="cr" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="2" GridPane.rowIndex="4">
          <font>
              <Font name="System Bold" size="48.0" />
          </font></Button>
 
-        <Button fx:id="bl" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="0" GridPane.rowIndex="2">
+        <Button fx:id="bl" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="0" GridPane.rowIndex="5">
          <font>
              <Font name="System Bold" size="48.0" />
          </font></Button>
 
-        <Button fx:id="bc" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <Button fx:id="bc" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="1" GridPane.rowIndex="5">
          <font>
              <Font name="System Bold" size="48.0" />
          </font></Button>
 
-        <Button fx:id="br" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="2" GridPane.rowIndex="2">
+        <Button fx:id="br" onAction="#move" prefHeight="150" prefWidth="150" GridPane.columnIndex="2" GridPane.rowIndex="5">
          <font>
              <Font name="System Bold" size="48.0" />
          </font></Button>
@@ -63,6 +71,9 @@
       <ColumnConstraints />
    </columnConstraints>
    <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />

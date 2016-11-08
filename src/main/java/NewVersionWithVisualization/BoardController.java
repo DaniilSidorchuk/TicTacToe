@@ -6,6 +6,7 @@ import javafx.beans.binding.BooleanBinding;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 import java.io.IOException;
 
@@ -34,6 +35,8 @@ public class BoardController {
     private Button bc;
     @FXML
     private Button br;
+    @FXML
+    private Label l1;
 
 
 
@@ -42,6 +45,7 @@ public class BoardController {
         this.playerFirst = playerFirst;
         this.playerSecond = playerSecond;
         this.currentPlayer = playerFirst;
+        l1.setText(currentPlayer.getName());
     }
 
     public Boolean moveValidity(Button button){
@@ -63,6 +67,7 @@ public class BoardController {
     if (currentPlayer == playerFirst){
         currentPlayer = playerSecond;
     } else currentPlayer = playerFirst;
+        l1.setText(currentPlayer.getName());
     }
 
     private void findWinner() {

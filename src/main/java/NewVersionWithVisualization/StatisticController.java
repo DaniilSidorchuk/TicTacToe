@@ -1,6 +1,7 @@
 package NewVersionWithVisualization;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
@@ -11,7 +12,7 @@ import java.util.Properties;
 public class StatisticController {
 
     @FXML
-    TextField table;
+    Label table;
 
     private MainApplication application;
 
@@ -22,7 +23,7 @@ public class StatisticController {
     }
 
     private Properties loadProperties() throws IOException {
-        InputStream stream = this.getClass().getResourceAsStream("db.properties");
+        InputStream stream = this.getClass().getClassLoader().getResourceAsStream("db.properties");
 
         Properties properties = new Properties();
         properties.load(stream);
@@ -59,7 +60,7 @@ public class StatisticController {
             int wins = resultSet.getInt("wins");
             int losses = resultSet.getInt("losses");
 
-            resultsOfGame.append(name + " " + age + " " + wins + " " + losses + "\n");
+            resultsOfGame.append(name + "   " + age + "   " + wins + "   " + losses + "\n");
         }
         table.setText("Name Age Wins Losses \n" + resultsOfGame.toString());
 
